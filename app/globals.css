@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&family=Manrope:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap');
+
+:root {
+  --wine: #4d1718;
+  --wine-deep: #2a0c0e;
+  --wine-soft: #6a2d2c;
+  --cream: #e9d4ab;
+  --ivory: #f1eadf;
+  --ink: #211a17;
+  --green: #203f22;
+  --green-mid: #42633a;
+  --paper: #efe7da;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--wine-deep); }
+body {
+  margin: 0;
+  color: var(--ivory);
+  background: var(--wine-deep);
+  font-family: "Manrope", Arial, sans-serif;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+main { overflow: clip; }
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 48% 28%, rgba(167, 96, 81, .25), transparent 28%),
+    linear-gradient(135deg, #351011 0%, var(--wine) 46%, #2b0b0d 100%);
+  isolation: isolate;
+}
+
+.mobile-reference { display: none; }
+.mobile-hotspot { display: none; }
+
+.desktop-art {
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.wine-glow {
+  position: absolute;
+  inset: 8% 18% 5%;
+  background: radial-gradient(circle at 50% 30%, rgba(240, 184, 151, .12), rgba(93, 24, 24, .03) 45%, transparent 72%);
+  filter: blur(2px);
+}
+
+.hero-word {
+  position: absolute;
+  z-index: 2;
+  font-family: "Italiana", "Times New Roman", serif;
+  color: var(--cream);
+  font-weight: 400;
+  letter-spacing: -.08em;
+  line-height: .78;
+  white-space: nowrap;
+  text-shadow: 0 2px 24px rgba(34, 6, 7, .16);
+}
+.hero-word-top {
+  top: 7vh;
+  left: 6vw;
+  font-size: clamp(8rem, 18vw, 20rem);
+}
+.hero-word-bottom {
+  top: 37vh;
+  left: 43vw;
+  font-size: clamp(9rem, 20vw, 22rem);
+}
+
+.flower-mark {
+  position: relative;
+  display: inline-block;
+  width: .58em;
+  height: .62em;
+  margin: 0 .03em .06em .02em;
+  vertical-align: middle;
+  transform: rotate(-12deg);
+  filter: drop-shadow(0 9px 12px rgba(24, 5, 6, .28));
+}
+.flower-core {
+  position: absolute;
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #17130f 0 30%, #4c4031 31% 48%, #d6c8a7 49% 100%);
+  left: 49%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+}
+.flower-petal {
+  position: absolute;
+  width: 48%;
+  height: 65%;
+  border-radius: 72% 34% 63% 42% / 68% 47% 73% 36%;
+  transform-origin: 50% 70%;
+  background:
+    radial-gradient(ellipse at 35% 25%, rgba(255,255,255,.92), transparent 33%),
+    linear-gradient(145deg, #fffdf0 0%, #e8e0cb 45%, #baa98c 100%);
+  box-shadow: inset -6px -8px 12px rgba(118, 97, 73, .13);
+}
+
+.scribble {
+  position: absolute;
+  z-index: 7;
+  top: 39vh;
+  left: 45.5vw;
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: clamp(6rem, 13vw, 14rem);
+  color: rgba(252, 245, 230, .95);
+  transform: rotate(-9deg);
+  line-height: .7;
+}
+
+.reference-poster {
+  position: absolute;
+  z-index: 4;
+  right: 8vw;
+  bottom: -8vh;
+  width: min(35vw, 490px);
+  aspect-ratio: 512 / 800;
+  border-radius: 46px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(11, 2, 3, .42);
+  transform: rotate(1.2deg);
+  opacity: .82;
+  mix-blend-mode: luminosity;
+}
+.reference-poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(78, 18, 18, .08), rgba(41, 9, 10, .22));
+}
+.reference-poster-image { object-fit: cover; }
+
+.hero-ui {
+  position: relative;
+  z-index: 20;
+  width: min(39rem, 44vw);
+  padding: 48vh 0 8vh 7vw;
+}
+.eyebrow {
+  margin: 0 0 1.4rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.hero-ui h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(2.7rem, 4.8vw, 5.7rem);
+  line-height: .88;
+  letter-spacing: -.04em;
+  max-width: 8ch;
+}
+.hero-ui h1 span {
+  display: block;
+  margin-top: .2em;
+  font-style: italic;
+  color: var(--cream);
+  font-size: .62em;
+  line-height: 1.05;
+}
+.hero-copy {
+  max-width: 27rem;
+  margin: 1.6rem 0 2rem;
+  color: rgba(243, 234, 218, .78);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.1rem, 1.35vw, 1.42rem);
+  line-height: 1.25;
+}
+.hero-cta,
+.final-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  min-width: 180px;
+  padding: .95rem 1.1rem;
+  border: 1px solid rgba(234, 212, 171, .45);
+  color: var(--cream);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .68rem;
+  transition: .35s ease;
+}
+.hero-cta:hover, .final-cta:hover {
+  background: var(--cream);
+  color: var(--wine-deep);
+}
+
+.botanical {
+  position: absolute;
+  z-index: 3;
+  width: 28vw;
+  height: 80vh;
+  pointer-events: none;
+  filter: drop-shadow(0 18px 22px rgba(11, 23, 12, .24));
+}
+.botanical-left { left: -5vw; top: 6vh; transform: rotate(8deg); }
+.botanical-right { right: -6vw; top: 0; transform: scaleX(-1) rotate(4deg); }
+.botanical-front { z-index: 15; top: 40vh; opacity: .96; }
+.botanical-front.botanical-left { left: -9vw; transform: rotate(-5deg) scale(1.12); }
+.botanical-front.botanical-right { right: -10vw; transform: scaleX(-1) rotate(-9deg) scale(1.08); }
+.stem {
+  position: absolute;
+  left: 48%;
+  top: 4%;
+  width: 7px;
+  height: 95%;
+  border-radius: 50%;
+  background: linear-gradient(#35572e, #1b341d);
+  transform: rotate(8deg);
+}
+.leaf {
+  position: absolute;
+  width: 43%;
+  height: 21%;
+  background:
+    linear-gradient(115deg, rgba(255,255,255,.11), transparent 20%),
+    linear-gradient(160deg, #537442 0%, #244726 46%, #132d18 100%);
+  border-radius: 6% 92% 8% 92% / 8% 82% 12% 92%;
+  transform-origin: 0 100%;
+  box-shadow: inset 8px 4px 20px rgba(123, 157, 89, .13);
+}
+.leaf::after {
+  content: "";
+  position: absolute;
+  left: 8%; top: 51%;
+  width: 90%; height: 1px;
+  background: rgba(188, 202, 157, .22);
+  transform: rotate(-8deg);
+}
+.leaf-1 { left: 50%; top: 5%; transform: rotate(-35deg) scale(.84); }
+.leaf-2 { left: 22%; top: 16%; transform: rotate(144deg) scale(.86); }
+.leaf-3 { left: 48%; top: 26%; transform: rotate(-20deg) scale(1.02); }
+.leaf-4 { left: 14%; top: 37%; transform: rotate(150deg) scale(1.08); }
+.leaf-5 { left: 48%; top: 48%; transform: rotate(-12deg) scale(.92); }
+.leaf-6 { left: 13%; top: 58%; transform: rotate(154deg) scale(1.12); }
+.leaf-7 { left: 47%; top: 69%; transform: rotate(-4deg) scale(1.04); }
+.leaf-8 { left: 14%; top: 79%; transform: rotate(161deg) scale(.94); }
+
+.butterfly {
+  position: absolute;
+  z-index: 8;
+  color: #94a968;
+  font-size: 1.4rem;
+  text-shadow: 10px 9px 0 #527144;
+}
+.butterfly-one { top: 28%; right: 26%; transform: rotate(17deg); }
+.butterfly-two { top: 33%; right: 22%; transform: rotate(-19deg) scale(.72); }
+
+.manifesto {
+  position: relative;
+  min-height: 86vh;
+  padding: clamp(5rem, 10vw, 10rem) 8vw;
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  grid-template-columns: .45fr 1.3fr 1fr;
+  gap: 4vw;
+  align-items: center;
+}
+.section-index {
+  align-self: start;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  border-top: 1px solid rgba(32, 26, 23, .42);
+  padding-top: .7rem;
+}
+.kicker {
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: .72rem;
+}
+.manifesto h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(4rem, 8vw, 9rem);
+  line-height: .8;
+  font-weight: 500;
+  letter-spacing: -.06em;
+}
+.manifesto h2 em {
+  display: block;
+  font-weight: 400;
+  color: var(--wine-soft);
+}
+.manifesto-copy > p:last-child {
+  max-width: 34rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.2rem, 1.7vw, 1.7rem);
+  line-height: 1.25;
+}
+.manifesto-orbit {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid rgba(76, 23, 24, .26);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: "Italiana", serif;
+  color: var(--wine);
+}
+.manifesto-orbit::before,
+.manifesto-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border: 1px solid rgba(76, 23, 24, .18);
+  border-radius: 50%;
+}
+.manifesto-orbit::after { inset: 31%; }
+.manifesto-orbit span { font-size: clamp(3rem, 6vw, 7rem); letter-spacing: -.07em; }
+.manifesto-orbit i {
+  position: absolute;
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: clamp(4rem, 8vw, 9rem);
+  color: rgba(77, 23, 24, .72);
+  transform: rotate(-13deg);
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 82vh;
+}
+.editorial-card {
+  position: relative;
+  min-height: 82vh;
+  padding: 4rem 3.5rem;
+  overflow: hidden;
+}
+.card-light { background: #d8c9b8; color: #2a211d; }
+.card-photo { background: #25100f; }
+.card-wine { background: var(--wine); color: var(--ivory); }
+.card-number { font-family: "Cormorant Garamond", serif; font-size: 1.2rem; }
+.card-label { margin-top: 22vh; text-transform: uppercase; letter-spacing: .18em; font-size: .68rem; }
+.editorial-card h3 {
+  margin: 1rem 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 4.2vw, 5.2rem);
+  line-height: .92;
+  letter-spacing: -.04em;
+}
+.editorial-card > p:last-child { max-width: 28rem; line-height: 1.6; opacity: .76; }
+.card-wine a { position: absolute; bottom: 4rem; text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; }
+.card-image { object-fit: cover; object-position: center; transform: scale(1.18); }
+.card-photo-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(38,10,10,.08), rgba(30,7,7,.75)); }
+.card-photo-copy { position: absolute; inset: auto 3.5rem 4rem; z-index: 2; }
+.card-photo-copy span { font-family: "Cormorant Garamond", serif; }
+
+.quote-section {
+  position: relative;
+  padding: 12vw 9vw;
+  background: #17100f;
+  text-align: center;
+  overflow: hidden;
+}
+.quote-section blockquote {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.2rem, 7.8vw, 8.4rem);
+  line-height: .9;
+  letter-spacing: -.05em;
+  color: var(--cream);
+}
+.quote-section > p { margin-top: 3rem; text-transform: uppercase; letter-spacing: .22em; font-size: .66rem; color: rgba(240,230,213,.58); }
+.quote-flower {
+  position: absolute;
+  width: 26vw;
+  height: 26vw;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .1;
+}
+.quote-flower .flower-mark { width: 100%; height: 100%; }
+
+.final {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8vw;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(148, 73, 63, .34), transparent 34%),
+    var(--wine-deep);
+  text-align: center;
+}
+.final-topline { text-transform: uppercase; letter-spacing: .2em; color: rgba(241,234,223,.64); font-size: .66rem; }
+.final h2 {
+  margin: 1rem 0;
+  font-family: "Italiana", serif;
+  color: var(--cream);
+  font-size: clamp(6rem, 18vw, 20rem);
+  line-height: .75;
+  letter-spacing: -.08em;
+}
+.final h2 span { font-family: "Mrs Saint Delafield", cursive; font-size: .72em; display: inline-block; transform: rotate(-8deg) translateY(.08em); color: var(--ivory); }
+.final > p { max-width: 31rem; font-family: "Cormorant Garamond", serif; font-size: 1.35rem; color: rgba(241,234,223,.72); }
+.final-cta { margin-top: 1.8rem; }
+
+@media (max-width: 980px) {
+  .hero-ui { width: 56vw; padding-left: 5vw; }
+  .reference-poster { right: 2vw; width: 39vw; }
+  .editorial-grid { grid-template-columns: 1fr; }
+  .editorial-card { min-height: 64vh; }
+  .manifesto { grid-template-columns: .2fr 1fr; }
+  .manifesto-orbit { grid-column: 2; width: 64vw; justify-self: end; }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 100svh;
+    background: #351112;
+  }
+  .desktop-art { display: none; }
+  .mobile-reference {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: #351112;
+  }
+  .mobile-reference::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0 74%, rgba(28, 6, 7, .08) 100%);
+    pointer-events: none;
+  }
+  .mobile-reference-image {
+    object-fit: cover;
+    object-position: 50% 0;
+  }
+  .hero-ui {
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    width: auto;
+    padding: 0;
+    pointer-events: none;
+  }
+  .hero-ui > * { opacity: 0; }
+  .mobile-hotspot {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    left: 14%;
+    top: 61%;
+    width: 28%;
+    height: 8%;
+    border-radius: 4px;
+  }
+  .manifesto {
+    min-height: 100svh;
+    padding: 5.5rem 1.4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .section-index { width: 54px; }
+  .manifesto h2 { font-size: clamp(4rem, 20vw, 7rem); }
+  .manifesto-orbit {
+    grid-column: 1;
+    width: 86vw;
+    justify-self: center;
+    margin-top: 1rem;
+  }
+  .editorial-card { min-height: 78vh; padding: 3rem 1.4rem; }
+  .card-label { margin-top: 18vh; }
+  .card-photo-copy { inset: auto 1.4rem 3rem; }
+  .quote-section { padding: 8rem 1.4rem; }
+  .quote-section blockquote { font-size: clamp(3rem, 14vw, 5rem); }
+  .final { min-height: 82vh; padding: 5rem 1.4rem; }
+  .final h2 { font-size: clamp(5rem, 26vw, 9rem); }
+}
+
+@media (max-width: 380px) {
+  .mobile-reference-image { object-fit: cover; }
+  .mobile-hotspot { top: 60%; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .botanical-left { animation: sway-left 9s ease-in-out infinite alternate; }
+  .botanical-right { animation: sway-right 11s ease-in-out infinite alternate; }
+  .flower-mark { animation: breathe 7s ease-in-out infinite alternate; }
+  @keyframes sway-left { to { transform: rotate(11deg) translateY(-8px); } }
+  @keyframes sway-right { to { transform: scaleX(-1) rotate(1deg) translateY(8px); } }
+  @keyframes breathe { to { transform: rotate(-8deg) scale(1.025); } }
+}
