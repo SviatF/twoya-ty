@@ -280,9 +280,11 @@
     max-height: 21%;
   }
 
+  /* Lower composition is intentionally pushed a little below the artboard so
+     transparent PNG padding cannot create a visible strip above the hero edge. */
   .hero-kolos-split {
     z-index: 8;
-    bottom: 1.5%;
+    bottom: -1.6%;
     height: 49%;
     max-width: 37%;
     opacity: .92;
@@ -299,7 +301,7 @@
   .hero-woman-core {
     z-index: 12;
     right: -7%;
-    bottom: 1.5%;
+    bottom: -2.2%;
     height: 60%;
     max-width: 68%;
   }
@@ -307,20 +309,20 @@
   .hero-core .hero-branch {
     left: 34%;
     right: auto;
-    bottom: 10%;
+    bottom: 8.2%;
     width: 48%;
     max-height: 23%;
   }
 
   .hero-core .hero-secondary-flower {
     left: 12%;
-    bottom: 1.5%;
+    bottom: -1.8%;
     width: 24%;
     max-height: 18%;
   }
 
   .hero-meta {
-    bottom: .55rem;
+    bottom: .35rem;
   }
 }
 
@@ -353,7 +355,7 @@
   }
 
   .hero-kolos-split {
-    bottom: 1%;
+    bottom: -1.8%;
     height: 48%;
     max-width: 39%;
   }
@@ -368,16 +370,16 @@
 
   .hero-woman-core {
     right: -10%;
-    bottom: 1.5%;
+    bottom: -2.5%;
     height: 61%;
     max-width: 71%;
   }
 
   .hero-core .hero-branch {
-    bottom: 10.5%;
+    bottom: 8.5%;
   }
 
   .hero-core .hero-secondary-flower {
-    bottom: 1.5%;
+    bottom: -2%;
   }
 }
