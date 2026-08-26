@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&family=Manrope:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap');
+
+:root {
+  --wine: #4d1718;
+  --wine-deep: #2a0c0e;
+  --wine-soft: #6a2d2c;
+  --cream: #e8cc98;
+  --ivory: #f3eadb;
+  --ink: #211a17;
+  --paper: #efe7da;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--wine-deep); }
+body { margin: 0; color: var(--ivory); background: var(--wine-deep); font-family: "Manrope", Arial, sans-serif; overflow-x: hidden; }
+a { color: inherit; }
+main { overflow: clip; }
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 55% 24%, rgba(150, 84, 72, .24), transparent 30%),
+    linear-gradient(145deg, #321011 0%, var(--wine) 50%, #2a0c0e 100%);
+  isolation: isolate;
+  overflow: hidden;
+}
+.hero-art { position: absolute; inset: 0; overflow: hidden; }
+.wine-glow { position: absolute; inset: 6% 16% 0; background: radial-gradient(circle at 53% 34%, rgba(244,190,150,.12), transparent 52%); }
+
+.device-chrome { display: none; }
+
+.hero-word {
+  position: absolute;
+  z-index: 2;
+  font-family: "Italiana", "Times New Roman", serif;
+  color: var(--cream);
+  font-weight: 400;
+  letter-spacing: -.075em;
+  line-height: .74;
+  white-space: nowrap;
+  text-shadow: 0 2px 24px rgba(34,6,7,.14);
+}
+.hero-word-top { top: 6vh; left: 6vw; font-size: clamp(8rem, 18vw, 20rem); }
+.hero-word-bottom { top: 34vh; left: 43vw; font-size: clamp(9rem, 19vw, 21rem); }
+
+.flower-mark {
+  position: relative;
+  display: inline-block;
+  width: .64em;
+  height: .68em;
+  margin: 0 .01em .04em .03em;
+  vertical-align: middle;
+  transform: rotate(-10deg);
+  filter: drop-shadow(0 9px 12px rgba(24,5,6,.28));
+}
+.flower-core { position: absolute; width: 18%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #17130f 0 32%, #4d4031 33% 50%, #d3c49f 51% 100%); left: 50%; top: 45%; transform: translate(-50%,-50%); z-index: 8; }
+.flower-petal { position: absolute; width: 46%; height: 58%; border-radius: 72% 35% 65% 42% / 70% 48% 74% 36%; transform-origin: 50% 72%; background: radial-gradient(ellipse at 33% 25%, rgba(255,255,255,.94), transparent 32%), linear-gradient(145deg,#fffdf1 0%,#e9dfc7 48%,#baa68a 100%); box-shadow: inset -6px -8px 12px rgba(118,97,73,.12); }
+
+.scribble { position: absolute; z-index: 7; top: 37vh; left: 45vw; font-family: "Mrs Saint Delafield", cursive; font-size: clamp(6rem, 13vw, 14rem); color: rgba(252,245,230,.96); transform: rotate(-9deg); line-height: .7; }
+
+.model-wrap { position: absolute; z-index: 6; right: 7vw; bottom: -4vh; width: min(39vw, 570px); height: min(72vh, 760px); }
+.model-image { object-fit: contain; object-position: bottom center; filter: saturate(.92) contrast(1.02) drop-shadow(0 32px 36px rgba(10,2,3,.34)); }
+
+.mini-flower { position: absolute; z-index: 14; width: 120px; height: 120px; opacity: .95; }
+.mini-flower-top { top: 4vh; right: 22vw; transform: rotate(18deg); }
+.mini-flower-bottom { left: 8vw; bottom: -2vh; transform: rotate(-18deg) scale(1.1); }
+.mini-flower .flower-mark { width: 100%; height: 100%; }
+
+.hero-ui { position: relative; z-index: 20; width: min(35rem, 42vw); padding: 46vh 0 8vh 7vw; }
+.eyebrow { margin: 0 0 1.2rem; font-family: "Cormorant Garamond", serif; font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(234,208,162,.78); }
+.hero-ui h1 { margin: 0; font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: clamp(2.4rem,4.4vw,5.1rem); line-height: .88; letter-spacing: -.04em; max-width: 7ch; }
+.hero-ui h1 span { font-family: "Mrs Saint Delafield", cursive; font-weight: 400; display: inline-block; font-size: 1.18em; margin-left: .15em; transform: rotate(-6deg); }
+.hero-copy { max-width: 19rem; margin: 1.4rem 0 1.3rem; color: var(--cream); font-family: "Cormorant Garamond", serif; font-size: clamp(1.2rem,1.6vw,1.55rem); line-height: 1.12; text-transform: uppercase; }
+.hero-cta { display: inline-grid; gap: .65rem; min-width: 175px; padding: .8rem .95rem; border: 1px solid rgba(234,212,171,.36); color: var(--cream); text-decoration: none; background: rgba(35,7,8,.34); backdrop-filter: blur(7px); }
+.hero-cta span { font-family: "Mrs Saint Delafield", cursive; font-size: 1.6rem; line-height: .8; }
+.hero-cta b { font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
+
+.botanical { position: absolute; z-index: 3; width: 28vw; height: 82vh; pointer-events: none; filter: drop-shadow(0 18px 22px rgba(11,23,12,.25)); }
+.botanical-left { left: -5vw; top: 5vh; transform: rotate(8deg); }
+.botanical-right { right: -6vw; top: -2vh; transform: scaleX(-1) rotate(4deg); }
+.botanical-front { z-index: 15; top: 41vh; opacity: .98; }
+.botanical-front.botanical-left { left: -9vw; transform: rotate(-5deg) scale(1.12); }
+.botanical-front.botanical-right { right: -10vw; transform: scaleX(-1) rotate(-9deg) scale(1.08); }
+.stem { position: absolute; left: 48%; top: 4%; width: 7px; height: 95%; border-radius: 50%; background: linear-gradient(#35572e,#1b341d); transform: rotate(8deg); }
+.leaf { position: absolute; width: 43%; height: 21%; background: linear-gradient(115deg,rgba(255,255,255,.11),transparent 20%), linear-gradient(160deg,#567944 0%,#264829 46%,#132d18 100%); border-radius: 6% 92% 8% 92% / 8% 82% 12% 92%; transform-origin: 0 100%; box-shadow: inset 8px 4px 20px rgba(123,157,89,.13); }
+.leaf::after { content:""; position:absolute; left:8%; top:51%; width:90%; height:1px; background:rgba(188,202,157,.22); transform:rotate(-8deg); }
+.leaf-1 { left:50%; top:3%; transform:rotate(-35deg) scale(.84); }
+.leaf-2 { left:22%; top:13%; transform:rotate(144deg) scale(.86); }
+.leaf-3 { left:48%; top:23%; transform:rotate(-20deg) scale(1.02); }
+.leaf-4 { left:14%; top:33%; transform:rotate(150deg) scale(1.08); }
+.leaf-5 { left:48%; top:43%; transform:rotate(-12deg) scale(.92); }
+.leaf-6 { left:13%; top:53%; transform:rotate(154deg) scale(1.12); }
+.leaf-7 { left:47%; top:64%; transform:rotate(-4deg) scale(1.04); }
+.leaf-8 { left:14%; top:74%; transform:rotate(161deg) scale(.94); }
+.leaf-9 { left:47%; top:84%; transform:rotate(8deg) scale(.88); }
+
+.butterfly { position:absolute; z-index:8; color:#90a668; font-size:1.4rem; text-shadow:10px 9px 0 #527144; }
+.butterfly-one { top:27%; right:25%; transform:rotate(17deg); }
+.butterfly-two { top:32%; right:21%; transform:rotate(-19deg) scale(.72); }
+
+.manifesto { position:relative; min-height:86vh; padding:clamp(5rem,10vw,10rem) 8vw; background:var(--paper); color:var(--ink); display:grid; grid-template-columns:.45fr 1.3fr 1fr; gap:4vw; align-items:center; }
+.section-index { align-self:start; font-family:"Cormorant Garamond",serif; font-size:1rem; border-top:1px solid rgba(32,26,23,.42); padding-top:.7rem; }
+.kicker { margin:0 0 1.2rem; text-transform:uppercase; letter-spacing:.13em; font-size:.72rem; }
+.manifesto h2 { margin:0; font-family:"Cormorant Garamond",serif; font-size:clamp(4rem,8vw,9rem); line-height:.8; font-weight:500; letter-spacing:-.06em; }
+.manifesto h2 em { display:block; font-weight:400; color:var(--wine-soft); }
+.manifesto-copy > p:last-child { max-width:34rem; font-family:"Cormorant Garamond",serif; font-size:clamp(1.2rem,1.7vw,1.7rem); line-height:1.25; }
+.manifesto-orbit { position:relative; aspect-ratio:1; border:1px solid rgba(76,23,24,.26); border-radius:50%; display:grid; place-items:center; font-family:"Italiana",serif; color:var(--wine); }
+.manifesto-orbit::before,.manifesto-orbit::after { content:""; position:absolute; inset:14%; border:1px solid rgba(76,23,24,.18); border-radius:50%; }
+.manifesto-orbit::after { inset:31%; }
+.manifesto-orbit span { font-size:clamp(3rem,6vw,7rem); letter-spacing:-.07em; }
+.manifesto-orbit i { position:absolute; font-family:"Mrs Saint Delafield",cursive; font-size:clamp(4rem,8vw,9rem); color:rgba(77,23,24,.72); transform:rotate(-13deg); }
+
+.editorial-grid { display:grid; grid-template-columns:1fr 1fr 1fr; min-height:82vh; }
+.editorial-card { position:relative; min-height:82vh; padding:4rem 3.5rem; overflow:hidden; }
+.card-light { background:#d8c9b8; color:#2a211d; }
+.card-photo { background:#25100f; }
+.card-wine { background:var(--wine); color:var(--ivory); }
+.card-number { font-family:"Cormorant Garamond",serif; font-size:1.2rem; }
+.card-label { margin-top:22vh; text-transform:uppercase; letter-spacing:.18em; font-size:.68rem; }
+.editorial-card h3 { margin:1rem 0; font-family:"Cormorant Garamond",serif; font-weight:500; font-size:clamp(2.5rem,4.2vw,5.2rem); line-height:.92; letter-spacing:-.04em; }
+.editorial-card > p:last-child { max-width:28rem; line-height:1.6; opacity:.76; }
+.card-wine a { position:absolute; bottom:4rem; text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; }
+.card-image { object-fit:contain; object-position:bottom center; transform:scale(1.12); }
+.card-photo-overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(38,10,10,.05),rgba(30,7,7,.78)); }
+.card-photo-copy { position:absolute; inset:auto 3.5rem 4rem; z-index:2; }
+.card-photo-copy span { font-family:"Cormorant Garamond",serif; }
+
+.quote-section { position:relative; padding:12vw 9vw; background:#17100f; text-align:center; overflow:hidden; }
+.quote-section blockquote { position:relative; z-index:2; width:min(100%,1100px); margin:0 auto; font-family:"Cormorant Garamond",serif; font-size:clamp(3.2rem,7.8vw,8.4rem); line-height:.9; letter-spacing:-.05em; color:var(--cream); }
+.quote-section > p { margin-top:3rem; text-transform:uppercase; letter-spacing:.22em; font-size:.66rem; color:rgba(240,230,213,.58); }
+.quote-flower { position:absolute; width:26vw; height:26vw; top:50%; left:50%; transform:translate(-50%,-50%); opacity:.1; }
+.quote-flower .flower-mark { width:100%; height:100%; }
+
+.final { position:relative; min-height:90vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8vw; background:radial-gradient(circle at 50% 34%,rgba(148,73,63,.34),transparent 34%),var(--wine-deep); text-align:center; }
+.final-topline { text-transform:uppercase; letter-spacing:.2em; color:rgba(241,234,223,.64); font-size:.66rem; }
+.final h2 { margin:1rem 0; font-family:"Italiana",serif; color:var(--cream); font-size:clamp(6rem,18vw,20rem); line-height:.75; letter-spacing:-.08em; }
+.final h2 span { font-family:"Mrs Saint Delafield",cursive; font-size:.72em; display:inline-block; transform:rotate(-8deg) translateY(.08em); color:var(--ivory); }
+.final > p { max-width:31rem; font-family:"Cormorant Garamond",serif; font-size:1.35rem; color:rgba(241,234,223,.72); }
+.final-cta { display:inline-flex; align-items:center; justify-content:space-between; gap:2.5rem; min-width:230px; margin-top:1.8rem; padding:.95rem 1.1rem; border:1px solid rgba(234,212,171,.45); color:var(--cream); text-decoration:none; text-transform:uppercase; letter-spacing:.12em; font-size:.68rem; transition:.35s ease; }
+.final-cta:hover { background:var(--cream); color:var(--wine-deep); }
+
+@media (max-width:980px) {
+  .hero-ui { width:55vw; padding-left:5vw; }
+  .model-wrap { right:1vw; width:48vw; }
+  .editorial-grid { grid-template-columns:1fr; }
+  .editorial-card { min-height:64vh; }
+  .manifesto { grid-template-columns:.2fr 1fr; }
+  .manifesto-orbit { grid-column:2; width:64vw; justify-self:end; }
+}
+
+@media (max-width:720px) {
+  .hero { min-height:100svh; border-radius:32px 32px 0 0; border:5px solid #1b1718; background:linear-gradient(145deg,#4a1818 0%,#5d2020 52%,#3c1214 100%); }
+  .device-chrome { display:block; position:absolute; z-index:40; inset:0; pointer-events:none; border:1px solid rgba(255,255,255,.08); border-radius:27px 27px 0 0; }
+  .notch { position:absolute; top:0; left:50%; width:31%; height:29px; transform:translateX(-50%); background:#171719; border-radius:0 0 18px 18px; }
+  .status-time { position:absolute; top:15px; left:17%; font-size:11px; font-weight:600; color:#f1eeec; }
+  .status-icons { position:absolute; top:15px; right:7%; font-size:9px; letter-spacing:.03em; color:#f1eeec; }
+  .wine-glow { inset:0; background:radial-gradient(circle at 52% 28%,rgba(238,187,150,.08),transparent 46%); }
+
+  .hero-word-top { top:11.5vh; left:9vw; font-size:clamp(5.7rem,29vw,8.1rem); letter-spacing:-.09em; }
+  .hero-word-bottom { top:28.5vh; left:45vw; font-size:clamp(6.2rem,31vw,8.6rem); }
+  .flower-mark { width:.62em; height:.68em; }
+  .scribble { top:35vh; left:45vw; font-size:clamp(4.4rem,25vw,7rem); transform:rotate(-11deg); }
+
+  .model-wrap { right:-8vw; bottom:-1vh; width:88vw; height:58vh; z-index:8; }
+  .model-image { object-position:bottom right; }
+  .mini-flower-top { width:66px; height:66px; top:7vh; right:29vw; }
+  .mini-flower-bottom { width:92px; height:92px; left:8vw; bottom:-2.5vh; z-index:18; }
+
+  .hero-ui { position:absolute; z-index:22; left:0; top:0; width:100%; height:100%; padding:0; }
+  .eyebrow { display:none; }
+  .hero-ui h1 { position:absolute; left:28vw; top:42vh; font-size:clamp(1.8rem,8.3vw,2.35rem); max-width:none; line-height:.85; color:#f5f0e8; text-transform:uppercase; }
+  .hero-ui h1 span { font-size:1.9em; text-transform:none; margin-left:.2em; }
+  .hero-copy { position:absolute; left:9vw; top:50vh; width:31vw; margin:0; font-size:clamp(.95rem,4.6vw,1.25rem); line-height:1.05; color:var(--cream); }
+  .hero-cta { position:absolute; left:8vw; top:64.5vh; min-width:35vw; padding:.6rem .7rem; background:rgba(35,7,8,.52); }
+  .hero-cta span { font-size:1.25rem; }
+  .hero-cta b { font-size:.52rem; }
+
+  .botanical { width:48vw; height:60vh; }
+  .botanical-left { left:-16vw; top:17vh; transform:rotate(8deg) scale(1.03); }
+  .botanical-right { right:-18vw; top:10vh; transform:scaleX(-1) rotate(4deg) scale(1.07); }
+  .botanical-front { top:49vh; z-index:16; }
+  .botanical-front.botanical-left { left:-18vw; transform:rotate(-8deg) scale(1.05); }
+  .botanical-front.botanical-right { right:-18vw; transform:scaleX(-1) rotate(-12deg) scale(1.08); }
+  .butterfly-one { top:29%; right:15%; }
+  .butterfly-two { top:33%; right:11%; }
+
+  .manifesto { min-height:100svh; padding:5.5rem 1.4rem; grid-template-columns:1fr; gap:2rem; }
+  .section-index { width:54px; }
+  .manifesto h2 { font-size:clamp(4rem,20vw,7rem); }
+  .manifesto-orbit { grid-column:1; width:86vw; justify-self:center; margin-top:1rem; }
+  .editorial-card { min-height:78vh; padding:3rem 1.4rem; }
+  .card-label { margin-top:18vh; }
+  .card-photo-copy { inset:auto 1.4rem 3rem; }
+  .quote-section { padding:8rem 1.4rem; }
+  .quote-section blockquote { font-size:clamp(3rem,14vw,5rem); }
+  .final { min-height:82vh; padding:5rem 1.4rem; }
+  .final h2 { font-size:clamp(5rem,26vw,9rem); }
+}
+
+@media (max-width:380px) {
+  .hero-word-top { font-size:26vw; }
+  .hero-word-bottom { font-size:29vw; }
+  .hero-ui h1 { top:41vh; }
+  .hero-copy { top:49vh; }
+  .hero-cta { top:63vh; }
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .botanical-left { animation:sway-left 9s ease-in-out infinite alternate; }
+  .botanical-right { animation:sway-right 11s ease-in-out infinite alternate; }
+  .flower-mark { animation:breathe 7s ease-in-out infinite alternate; }
+  @keyframes sway-left { to { transform:rotate(11deg) translateY(-8px); } }
+  @keyframes sway-right { to { transform:scaleX(-1) rotate(1deg) translateY(8px); } }
+  @keyframes breathe { to { transform:rotate(-8deg) scale(1.025); } }
+}
