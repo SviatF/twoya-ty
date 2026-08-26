@@ -12,43 +12,43 @@
     top: -3%;
     bottom: auto;
     height: 106%;
-    width: 27vw;
-    max-width: 560px;
+    width: 26vw;
+    max-width: 540px;
     max-height: none;
     object-fit: cover;
-    opacity: .94;
+    opacity: .93;
     transform: none;
   }
 
   .hero-ref__scene > .hero-exposure--left {
-    left: -11.5vw;
+    left: -12.5vw;
     object-position: left center;
     filter: drop-shadow(22px 0 34px rgba(4, 14, 8, .20));
   }
 
   .hero-ref__scene > .hero-exposure--right {
-    right: -12vw;
+    right: -13.5vw;
     object-position: right center;
     filter: drop-shadow(-22px 0 34px rgba(4, 14, 8, .22));
   }
 
-  /* Wider editorial stage with more breathing room in the middle. */
+  /* Wider editorial stage with a clean luxury centre. */
   .hero-core {
     z-index: 5;
-    width: min(78vw, 1440px);
+    width: min(79vw, 1460px);
     left: 50%;
     transform: translateX(-50%);
   }
 
-  /* Title becomes one compact diagonal composition instead of two floating rows. */
+  /* Compact title hierarchy, nudged down and slightly toward centre. */
   .hero-core .hero-wordmark {
-    left: 7%;
-    top: 3.2%;
-    width: 73%;
+    left: 8%;
+    top: 5.2%;
+    width: 71%;
   }
 
   .hero-core .hero-wordmark__top {
-    font-size: clamp(8.2rem, 10.1vw, 14.2rem);
+    font-size: clamp(8rem, 9.8vw, 13.8rem);
   }
 
   .hero-core .hero-wordmark__flower-slot {
@@ -63,102 +63,102 @@
   }
 
   .hero-core .hero-wordmark__bottom {
-    margin-left: 44%;
-    margin-top: -.035em;
-    font-size: clamp(7.5rem, 9.05vw, 12.3rem);
+    margin-left: 43.5%;
+    margin-top: -.075em;
+    font-size: clamp(7.35rem, 8.8vw, 11.9rem);
   }
 
-  /* Copy is deliberately larger on desktop and sits closer to the portrait. */
+  /* Copy is deliberately strong enough to read on a wide desktop. */
   .hero-core .hero-copy {
     z-index: 16;
-    left: 11.5%;
-    top: 46.5%;
-    width: 275px;
+    left: 13.5%;
+    top: 45.5%;
+    width: 292px;
   }
 
   .hero-core .hero-copy strong {
-    margin-left: 82px;
-    margin-bottom: 1.2rem;
-    font-size: clamp(2rem, 1.9vw, 2.5rem);
+    margin-left: 88px;
+    margin-bottom: 1.15rem;
+    font-size: clamp(2.05rem, 1.95vw, 2.6rem);
   }
 
   .hero-core .hero-copy p {
-    width: 200px;
-    font-size: 1.34rem;
+    width: 214px;
+    font-size: 1.42rem;
     line-height: 1.01;
   }
 
   .hero-core .hero-card {
-    width: 205px;
-    min-height: 74px;
-    margin-top: 1.25rem;
-    padding: 1rem 1.1rem;
-    background: rgba(42, 7, 9, .67);
-    border-color: rgba(231, 202, 143, .30);
-    box-shadow: 0 18px 36px rgba(29, 5, 7, .14);
+    width: 218px;
+    min-height: 72px;
+    margin-top: 1.2rem;
+    padding: 1rem 1.15rem;
+    background: rgba(42, 7, 9, .66);
+    border-color: rgba(231, 202, 143, .29);
+    box-shadow: 0 18px 36px rgba(29, 5, 7, .13);
   }
 
-  /* Script becomes a refined bridge between title and portrait, clear of the face. */
+  /* Script floats in negative space and no longer crowds the portrait. */
   .hero-core .hero-course {
     z-index: 15;
-    top: 29.8%;
-    right: 33%;
-    width: min(18.5vw, 340px);
-    max-height: 21%;
+    top: 27.4%;
+    right: 34.5%;
+    width: min(17vw, 315px);
+    max-height: 19%;
     transform: rotate(-7deg);
     opacity: .97;
   }
 
-  /* Portrait is the dominant focal point and moves toward the visual centre. */
+  /* Portrait is the focal point, moved slightly left and made a touch stronger. */
   .hero-woman-core {
     z-index: 13;
-    right: 10.5%;
-    bottom: -5.5%;
-    height: 80%;
-    max-width: 52%;
+    right: 14%;
+    bottom: -5.8%;
+    height: 82.5%;
+    max-width: 53%;
     filter: drop-shadow(0 30px 34px rgba(17, 3, 4, .32));
   }
 
-  /* Dried florals act as asymmetric depth layers, not decorative columns. */
+  /* Dried florals become quiet asymmetric depth, not separate decorative columns. */
   .hero-kolos-split {
     z-index: 7;
-    bottom: -5.5%;
-    height: 44%;
-    max-width: 17%;
-    opacity: .87;
+    bottom: -7.5%;
+    height: 41%;
+    max-width: 15.5%;
+    opacity: .78;
   }
 
   .hero-kolos-split--left {
-    left: 12.5%;
+    left: 15.5%;
   }
 
   .hero-kolos-split--right {
-    right: 5.5%;
-    height: 49%;
-    opacity: .82;
+    right: 7%;
+    height: 46%;
+    opacity: .76;
   }
 
-  /* Foreground greenery only kisses the dress instead of cutting through it. */
+  /* Foreground greenery only brushes the dress. */
   .hero-core .hero-branch {
     z-index: 17;
-    right: 14%;
-    bottom: -3.5%;
-    width: min(22vw, 390px);
-    max-height: 19%;
+    right: 18%;
+    bottom: -3.8%;
+    width: min(18.5vw, 335px);
+    max-height: 16.5%;
     transform: rotate(-4deg);
   }
 
   .hero-core .hero-secondary-flower {
     z-index: 18;
-    left: -1.5%;
-    bottom: -7%;
-    width: min(9vw, 145px);
-    max-height: 17%;
+    left: -3.5%;
+    bottom: -9%;
+    width: min(8.5vw, 136px);
+    max-height: 15.5%;
   }
 
   .hero-core .hero-sparks {
-    right: 24%;
-    top: 28%;
+    right: 25%;
+    top: 27.5%;
   }
 
   /* Subtle local light behind the model unifies all raster layers. */
@@ -169,70 +169,70 @@
     z-index: 3;
     pointer-events: none;
     background:
-      radial-gradient(ellipse at 61% 48%, rgba(255, 227, 199, .105) 0%, rgba(255, 227, 199, .045) 25%, transparent 48%),
-      radial-gradient(ellipse at 47% 38%, rgba(255, 238, 220, .035), transparent 31%),
-      linear-gradient(90deg, rgba(43, 5, 8, .12) 0%, transparent 20%, transparent 80%, rgba(43, 5, 8, .12) 100%);
+      radial-gradient(ellipse at 58% 47%, rgba(255, 227, 199, .115) 0%, rgba(255, 227, 199, .05) 24%, transparent 47%),
+      radial-gradient(ellipse at 46% 37%, rgba(255, 238, 220, .03), transparent 30%),
+      linear-gradient(90deg, rgba(43, 5, 8, .11) 0%, transparent 19%, transparent 81%, rgba(43, 5, 8, .11) 100%);
   }
 }
 
 @media (min-width: 1181px) and (max-width: 1500px) {
   .hero-core {
-    width: 80vw;
+    width: 81vw;
   }
 
   .hero-ref__scene > .hero-exposure--left,
   .hero-ref__scene > .hero-exposure--right {
-    width: 29vw;
+    width: 28vw;
   }
 
   .hero-ref__scene > .hero-exposure--left {
-    left: -12.5vw;
+    left: -13.5vw;
   }
 
   .hero-ref__scene > .hero-exposure--right {
-    right: -13vw;
+    right: -14vw;
   }
 
   .hero-core .hero-wordmark {
-    left: 6%;
+    left: 7%;
   }
 
   .hero-core .hero-wordmark__top {
-    font-size: clamp(7.4rem, 10.4vw, 11.8rem);
+    font-size: clamp(7.25rem, 10vw, 11.5rem);
   }
 
   .hero-core .hero-wordmark__bottom {
-    font-size: clamp(6.9rem, 9.2vw, 10.7rem);
+    font-size: clamp(6.75rem, 8.9vw, 10.4rem);
   }
 
   .hero-core .hero-copy {
-    left: 9%;
+    left: 10.5%;
   }
 
   .hero-core .hero-copy strong {
-    font-size: clamp(1.8rem, 2vw, 2.25rem);
+    font-size: clamp(1.85rem, 2vw, 2.3rem);
   }
 
   .hero-core .hero-copy p {
-    font-size: 1.2rem;
+    font-size: 1.23rem;
   }
 
   .hero-core .hero-course {
-    right: 31%;
-    width: min(20vw, 325px);
+    right: 32.5%;
+    width: min(18.5vw, 300px);
   }
 
   .hero-woman-core {
-    right: 7.5%;
-    height: 77%;
-    max-width: 51%;
+    right: 10%;
+    height: 79%;
+    max-width: 52%;
   }
 
   .hero-kolos-split--left {
-    left: 10%;
+    left: 12%;
   }
 
   .hero-kolos-split--right {
-    right: 3%;
+    right: 4.5%;
   }
 }
