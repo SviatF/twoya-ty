@@ -71,7 +71,7 @@
   /* Copy is deliberately strong enough to read on a wide desktop. */
   .hero-core .hero-copy {
     z-index: 16;
-    left: 13.5%;
+    left: 15.2%;
     top: 43.5%;
     width: 292px;
   }
@@ -102,14 +102,14 @@
   .hero-core .hero-course {
     z-index: 15;
     top: 25.4%;
-    right: 38%;
+    right: 41%;
     width: min(16.2vw, 300px);
     max-height: 18%;
     transform: rotate(-7deg);
     opacity: .97;
   }
 
-  /* Portrait keeps its final scale; only a subtle rightward nudge for balance. */
+  /* Portrait keeps its final scale and position. */
   .hero-woman-core {
     z-index: 13;
     right: 12.5%;
@@ -152,7 +152,7 @@
   .hero-core .hero-secondary-flower {
     z-index: 18;
     left: -3.5%;
-    bottom: -6%;
+    bottom: -4.2%;
     width: min(8.5vw, 136px);
     max-height: 15.5%;
   }
@@ -208,7 +208,7 @@
   }
 
   .hero-core .hero-copy {
-    left: 10.5%;
+    left: 12.5%;
     top: 43.8%;
   }
 
@@ -222,7 +222,7 @@
 
   .hero-core .hero-course {
     top: 25.8%;
-    right: 36%;
+    right: 39%;
     width: min(17.5vw, 285px);
   }
 
@@ -242,6 +242,6 @@
   }
 
   .hero-core .hero-secondary-flower {
-    bottom: -5.5%;
+    bottom: -3.8%;
   }
 }
