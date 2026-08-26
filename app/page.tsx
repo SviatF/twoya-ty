@@ -1,155 +1,139 @@
-import Image from "next/image";
+"use client";
 
-const petals = [
-  { x: 50, y: 20, r: -8, s: 1.0 },
-  { x: 63, y: 30, r: 42, s: .92 },
-  { x: 61, y: 51, r: 81, s: .84 },
-  { x: 48, y: 61, r: 155, s: .86 },
-  { x: 35, y: 48, r: 216, s: .88 },
-  { x: 36, y: 29, r: 286, s: .82 },
-];
+import { useEffect, useMemo, useState } from "react";
 
-function FlowerMark() {
-  return (
-    <span className="flower-mark" aria-label="о">
-      {petals.map((petal, index) => (
-        <span
-          className="flower-petal"
-          key={index}
-          style={{
-            left: `${petal.x}%`,
-            top: `${petal.y}%`,
-            transform: `translate(-50%, -50%) rotate(${petal.r}deg) scale(${petal.s})`,
-          }}
-        />
-      ))}
-      <span className="flower-core" />
-    </span>
-  );
-}
+type HeroAssets = Record<string, string>;
 
-function Botanical({ side, variant }: { side: "left" | "right"; variant?: "front" | "back" }) {
-  return (
-    <div className={`botanical botanical-${side} botanical-${variant ?? "back"}`} aria-hidden="true">
-      <span className="stem" />
-      {Array.from({ length: 9 }).map((_, i) => (
-        <span className={`leaf leaf-${i + 1}`} key={i} />
-      ))}
-    </div>
-  );
-}
+const PARTS = Array.from({ length: 10 }, (_, i) => `/hero-data/part-${String(i + 1).padStart(2, "0")}.txt`);
 
-function DeviceChrome() {
-  return (
-    <div className="device-chrome" aria-hidden="true">
-      <div className="status-time">17:20</div>
-      <div className="notch" />
-      <div className="status-icons">▮ LTE ▰</div>
-    </div>
-  );
+function pickAsset(assets: HeroAssets, keys: string[], fallbackIndex: number) {
+  for (const key of keys) {
+    if (assets[key]) return assets[key];
+  }
+  return Object.values(assets)[fallbackIndex] || "";
 }
 
 export default function Home() {
+  const [assets, setAssets] = useState<HeroAssets>({});
+
+  useEffect(() => {
+    let cancelled = false;
+
+    Promise.all(PARTS.map((url) => fetch(url).then((r) => {
+      if (!r.ok) throw new Error(`Failed to load ${url}`);
+      return r.text();
+    })))
+      .then((parts) => JSON.parse(parts.join("")) as HeroAssets)
+      .then((data) => {
+        if (!cancelled) setAssets(data);
+      })
+      .catch(() => {
+        if (!cancelled) setAssets({});
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const media = useMemo(() => ({
+    woman: pickAsset(assets, ["woman", "model", "womanCutout"], 0),
+    flowerMain: pickAsset(assets, ["flowerMain", "mainFlower", "flower-main", "flower"], 1),
+    leftLeaves: pickAsset(assets, ["leftLeaves", "left-leaves", "foliageLeft"], 2),
+    rightBotanical: pickAsset(assets, ["rightBotanical", "right-botanical", "foliageRight"], 3),
+    foreground: pickAsset(assets, ["foregroundBranch", "foreground", "branch"], 4),
+    dried: pickAsset(assets, ["driedFlorals", "dried", "pampas"], 5),
+    flowerBottom: pickAsset(assets, ["flowerBottom", "bottomFlower", "flower-bottom"], 6),
+    script: pickAsset(assets, ["script", "scriptTut", "signature"], 7),
+  }), [assets]);
+
+  const loaded = Boolean(media.woman);
+
   return (
     <main>
-      <section className="hero" id="top">
-        <DeviceChrome />
-        <div className="hero-art" aria-hidden="true">
-          <div className="wine-glow" />
-          <Botanical side="left" />
-          <Botanical side="right" />
-
-          <div className="hero-word hero-word-top">
-            ТВ<FlowerMark />Я
+      <section className={`hero ${loaded ? "hero-ready" : ""}`} id="top">
+        <div className="phone-shell" aria-hidden="true">
+          <div className="phone-status">
+            <span>17:20</span>
+            <span className="phone-notch" />
+            <span>▮ LTE ▰</span>
           </div>
-          <div className="hero-word hero-word-bottom">ТИ</div>
-          <div className="scribble">Тут</div>
-
-          <div className="mini-flower mini-flower-top"><FlowerMark /></div>
-          <div className="mini-flower mini-flower-bottom"><FlowerMark /></div>
-
-          <div className="model-wrap">
-            <Image
-              src="/model.svg"
-              alt=""
-              fill
-              priority
-              sizes="(max-width: 720px) 86vw, 43vw"
-              className="model-image"
-            />
-          </div>
-
-          <div className="butterfly butterfly-one">✦</div>
-          <div className="butterfly butterfly-two">✦</div>
-
-          <Botanical side="left" variant="front" />
-          <Botanical side="right" variant="front" />
         </div>
 
-        <div className="hero-ui">
-          <p className="eyebrow">Твоя Ти Тут</p>
-          <h1>
-            Це не —
-            <span>курс</span>
-          </h1>
-          <p className="hero-copy">А що залишиться, якщо прибрати всі твої «треба»?</p>
-          <a className="hero-cta" href="#manifesto">
+        <div className="hero-backdrop" aria-hidden="true" />
+
+        {media.dried && <img className="asset asset-dried" src={media.dried} alt="" />}
+        {media.leftLeaves && <img className="asset asset-left" src={media.leftLeaves} alt="" />}
+        {media.rightBotanical && <img className="asset asset-right" src={media.rightBotanical} alt="" />}
+
+        <div className="hero-title" aria-label="Твоя Ти">
+          <div className="title-line title-line-one">
+            <span>ТВ</span>
+            <span className="title-flower-slot">
+              {media.flowerMain && <img src={media.flowerMain} alt="" />}
+            </span>
+            <span>Я</span>
+          </div>
+          <div className="title-line title-line-two">ТИ</div>
+        </div>
+
+        {media.script && <img className="asset asset-script" src={media.script} alt="" />}
+
+        <div className="hero-copy-block">
+          <strong>ЦЕ НЕ -</strong>
+          <p>А ЩО<br />ЗАЛИШИТЬСЯ,<br />ЯКЩО<br />ПРИБРАТИ ВСІ<br />ТВОЇ «ТРЕБА»?</p>
+          <a href="#manifesto" className="hero-mini-card">
             <span>Можливо ти</span>
-            <b>Увійти →</b>
+            <b>УВІЙТИ →</b>
           </a>
         </div>
+
+        {media.woman && <img className="asset asset-woman" src={media.woman} alt="Жінка у леопардовій сукні" />}
+        {media.foreground && <img className="asset asset-foreground" src={media.foreground} alt="" />}
+        {media.flowerBottom && <img className="asset asset-bottom-flower" src={media.flowerBottom} alt="" />}
+
+        <div className="hero-butterflies" aria-hidden="true"><span>✦</span><span>✦</span></div>
+        <div className="hero-bottom-meta"><span>PAGE 01</span><span>REAL YOU · REAL COLOR</span></div>
       </section>
 
       <section className="manifesto" id="manifesto">
-        <div className="section-index">01</div>
-        <div className="manifesto-copy">
-          <p className="kicker">Не ставати кимось. Згадати себе.</p>
-          <h2>
-            Твоя справжня
-            <em> уже тут.</em>
-          </h2>
-          <p>Простір, у якому можна перестати відповідати чужим очікуванням і знову почути власний голос.</p>
+        <div className="manifesto-number">01</div>
+        <div className="manifesto-main">
+          <p className="section-kicker">Твоя Ти Тут</p>
+          <h2>Не ставати кимось.<br /><em>Згадати себе.</em></h2>
+          <p className="manifesto-lead">Цей простір не про те, щоб навчитися бути «правильною». Він про те, щоб нарешті почути, яка ти без шуму, ролей і чужих очікувань.</p>
         </div>
-        <div className="manifesto-orbit" aria-hidden="true">
-          <span>ТВОЯ</span>
-          <i>ТИ</i>
-        </div>
+        <div className="manifesto-mark" aria-hidden="true">ТИ</div>
       </section>
 
-      <section className="editorial-grid">
-        <article className="editorial-card card-light">
-          <span className="card-number">I</span>
-          <p className="card-label">Відчути</p>
-          <h3>Де закінчуються правила і починаєшся ти?</h3>
-          <p>Без поспіху. Без ролей. Без необхідності комусь щось доводити.</p>
+      <section className="editorial-section">
+        <article className="editorial-panel panel-cream">
+          <span>01 / ВІДЧУТИ</span>
+          <h3>Що залишиться, якщо прибрати всі «треба»?</h3>
+          <p>Тиша, в якій стає чутно власне бажання.</p>
         </article>
-        <article className="editorial-card card-photo">
-          <Image src="/model.svg" alt="Editorial mood проєкту" fill sizes="50vw" className="card-image" />
-          <div className="card-photo-overlay" />
-          <div className="card-photo-copy">
-            <span>II</span>
-            <h3>Побачити себе без фільтрів</h3>
-          </div>
+        <article className="editorial-panel panel-image">
+          {media.woman && <img src={media.woman} alt="Editorial portrait" />}
+          <div className="panel-image-shade" />
+          <div className="panel-copy"><span>02 / ПОБАЧИТИ</span><h3>Себе без фільтрів.</h3></div>
         </article>
-        <article className="editorial-card card-wine">
-          <span className="card-number">III</span>
-          <p className="card-label">Обрати</p>
-          <h3>Жити не «правильно», а по-своєму.</h3>
-          <a href="#final">Продовжити →</a>
+        <article className="editorial-panel panel-wine">
+          <span>03 / ОБРАТИ</span>
+          <h3>Жити по-своєму.</h3>
+          <p>Не голосніше. Не правильніше. Чесніше.</p>
         </article>
       </section>
 
       <section className="quote-section">
-        <div className="quote-flower" aria-hidden="true"><FlowerMark /></div>
+        {media.flowerMain && <img className="quote-flower" src={media.flowerMain} alt="" />}
         <blockquote>«Усі шукають себе десь. Але твоя Ти — уже Тут.»</blockquote>
-        <p>Твоя Ти Тут</p>
+        <p>ТВОЯ ТИ ТУТ</p>
       </section>
 
-      <section className="final" id="final">
-        <div className="final-topline">Тут починається твоє.</div>
-        <h2>ТВОЯ <span>ТИ</span></h2>
-        <p>Коли готова прибрати зайве — залишиться найважливіше.</p>
-        <a href="#top" className="final-cta">Повернутися до себе <span>↗</span></a>
+      <section className="final-section" id="final">
+        <p>Тут починається твоє.</p>
+        <h2>ТВОЯ <i>ТИ</i></h2>
+        <a href="#top">ПОВЕРНУТИСЯ ДО СЕБЕ ↗</a>
       </section>
     </main>
   );
