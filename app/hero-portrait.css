@@ -4,29 +4,43 @@
   position: relative;
 }
 
-/* Side botanical exposures deliberately live outside the central content frame. */
+/*
+ * Desktop botanical frame.
+ * The source PNGs contain transparent breathing room, so we deliberately
+ * overscale them and crop them against the viewport. This makes the foliage
+ * read as a continuous full-height frame instead of a floating illustration.
+ */
 .hero-ref__scene > .hero-exposure--left,
 .hero-ref__scene > .hero-exposure--right {
+  position: absolute;
   top: 0;
   bottom: 0;
   height: 100%;
   width: auto;
-  max-width: 31vw;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
   z-index: 18;
-  opacity: .98;
+  opacity: .99;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
 }
 
 .hero-ref__scene > .hero-exposure--left {
-  left: -2.7vw;
+  left: -7.5vw;
   object-position: left center;
-  filter: drop-shadow(14px 0 26px rgba(4, 14, 8, .26));
+  transform: scale(1.36);
+  transform-origin: left center;
+  filter: drop-shadow(18px 0 28px rgba(4, 14, 8, .27));
 }
 
 .hero-ref__scene > .hero-exposure--right {
-  right: -2.7vw;
+  right: -7vw;
   object-position: right center;
-  filter: drop-shadow(-14px 0 26px rgba(4, 14, 8, .28));
+  transform: scale(1.33);
+  transform-origin: right center;
+  filter: drop-shadow(-18px 0 28px rgba(4, 14, 8, .29));
 }
 
 /* Everything important is contained in this narrower centered artboard. */
@@ -35,7 +49,7 @@
   z-index: 4;
   inset-block: 0;
   left: 50%;
-  width: min(62vw, 1120px);
+  width: min(58vw, 1060px);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -158,12 +172,17 @@
 
 @media (max-width: 1450px) and (min-width: 981px) {
   .hero-core {
-    width: 68vw;
+    width: 64vw;
   }
 
-  .hero-ref__scene > .hero-exposure--left,
+  .hero-ref__scene > .hero-exposure--left {
+    left: -8vw;
+    transform: scale(1.30);
+  }
+
   .hero-ref__scene > .hero-exposure--right {
-    max-width: 29vw;
+    right: -8vw;
+    transform: scale(1.28);
   }
 
   .hero-woman-core {
@@ -178,12 +197,17 @@
 
 @media (max-width: 1180px) and (min-width: 821px) {
   .hero-core {
-    width: 74vw;
+    width: 72vw;
   }
 
-  .hero-ref__scene > .hero-exposure--left,
+  .hero-ref__scene > .hero-exposure--left {
+    left: -10vw;
+    transform: scale(1.22);
+  }
+
   .hero-ref__scene > .hero-exposure--right {
-    max-width: 27vw;
+    right: -10vw;
+    transform: scale(1.20);
   }
 
   .hero-core .hero-course {
@@ -207,7 +231,9 @@
     height: auto;
     width: 45%;
     max-width: none;
+    max-height: none;
     opacity: .98;
+    transform: none;
   }
 
   .hero-ref__scene > .hero-exposure--left {
