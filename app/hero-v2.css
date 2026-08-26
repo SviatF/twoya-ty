@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+
+.hero-v2 { overflow: hidden; }
+.hero-v2 .botanical,
+.hero-v2 .botanical-pampas,
+.hero-v2 .foreground-branch-svg,
+.hero-v2 .bottom-flower-v2,
+.hero-v2 .hero-flower-mark { position: absolute; pointer-events: none; user-select: none; }
+
+.botanical-left {
+  z-index: 8;
+  left: -3.5vw;
+  top: 7vh;
+  width: min(30vw, 470px);
+  height: auto;
+}
+
+.botanical-right {
+  z-index: 8;
+  right: -3vw;
+  top: 4vh;
+  width: min(33vw, 520px);
+  height: auto;
+}
+
+.botanical-pampas {
+  z-index: 5;
+  right: 5vw;
+  bottom: -5vh;
+  width: min(39vw, 620px);
+  height: auto;
+  opacity: .9;
+}
+
+.hero-title-v2 { z-index: 6; }
+.title-wordmark { display: flex; align-items: center; }
+.flower-wordmark {
+  display: inline-block;
+  position: relative;
+  width: .64em;
+  height: .72em;
+  flex: 0 0 .64em;
+  margin: -.02em .01em 0 .015em;
+}
+.hero-flower-mark {
+  z-index: 7;
+  width: 162%;
+  height: 162%;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%) rotate(-7deg);
+  overflow: visible;
+}
+
+.hero-woman-v2 {
+  z-index: 10;
+  right: 8vw;
+  bottom: -8vh;
+  height: min(74vh, 790px);
+  width: auto;
+  filter: drop-shadow(0 28px 26px rgba(14,3,4,.36));
+}
+
+.hero-script-v2 {
+  position: absolute;
+  z-index: 13;
+  left: 49%;
+  top: 34%;
+  color: rgba(255,255,255,.98);
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: clamp(8rem, 13vw, 15rem);
+  line-height: .68;
+  transform: rotate(-10deg);
+  text-shadow: 0 8px 26px rgba(29,6,7,.22);
+  pointer-events: none;
+}
+
+.foreground-branch-svg {
+  z-index: 15;
+  left: 35vw;
+  bottom: -2.5vh;
+  width: min(44vw, 720px);
+  height: auto;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 14px 15px rgba(9,20,10,.28));
+}
+
+.bottom-flower-v2 {
+  z-index: 16;
+  left: 7vw;
+  bottom: -8vh;
+  width: min(17vw, 240px);
+  height: auto;
+  transform: rotate(-12deg);
+}
+
+.quote-flower-v2 {
+  position: absolute;
+  width: min(35vw, 520px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  opacity: .08;
+  pointer-events: none;
+}
+
+@media (max-width: 1180px) {
+  .botanical-left { left: -7vw; width: 35vw; }
+  .botanical-right { right: -8vw; width: 39vw; }
+  .botanical-pampas { right: -2vw; width: 44vw; }
+  .hero-woman-v2 { right: 2vw; }
+  .hero-script-v2 { left: 46%; }
+  .foreground-branch-svg { left: 31vw; width: 51vw; }
+}
+
+@media (max-width: 720px) {
+  .botanical-left {
+    z-index: 11;
+    left: -21vw;
+    top: 15vh;
+    width: 63vw;
+  }
+  .botanical-right {
+    z-index: 11;
+    right: -25vw;
+    top: 16vh;
+    width: 68vw;
+  }
+  .botanical-pampas {
+    z-index: 7;
+    right: -17vw;
+    bottom: -2vh;
+    width: 74vw;
+    opacity: .82;
+  }
+  .hero-title-v2 { z-index: 9; }
+  .flower-wordmark { width: .62em; flex-basis: .62em; }
+  .hero-flower-mark { width: 175%; height: 175%; }
+  .hero-woman-v2 {
+    z-index: 13;
+    right: -17vw;
+    bottom: -1vh;
+    height: 55vh;
+    max-height: 570px;
+  }
+  .hero-script-v2 {
+    z-index: 14;
+    left: 48%;
+    top: 32.5%;
+    font-size: clamp(5.6rem, 25vw, 8.3rem);
+    transform: rotate(-11deg);
+  }
+  .foreground-branch-svg {
+    z-index: 16;
+    left: 19vw;
+    bottom: -1vh;
+    width: 90vw;
+    transform: rotate(-10deg);
+  }
+  .bottom-flower-v2 {
+    z-index: 18;
+    left: 2vw;
+    bottom: -4vh;
+    width: 36vw;
+  }
+}
