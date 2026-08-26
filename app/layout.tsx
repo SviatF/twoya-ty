@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
+import "./site.css";
 
 export const metadata: Metadata = {
   title: "Твоя Ти Тут — простір повернення до себе",
