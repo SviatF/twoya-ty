@@ -9,6 +9,17 @@ const PARTS = Array.from(
   (_, i) => `/hero-data/part-${String(i + 1).padStart(2, "0")}.txt`,
 );
 
+const EMPTY_MEDIA: HeroAssets = {
+  woman: "",
+  flowerMain: "",
+  leftLeaves: "",
+  rightBotanical: "",
+  foregroundBranch: "",
+  driedFlorals: "",
+  flowerBottom: "",
+  script: "",
+};
+
 function extractAsset(raw: string, key: string) {
   const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const match = raw.match(new RegExp(`\\"${escaped}\\"\\s*:\\s*\\"([^\\"]+)\\"`));
@@ -42,7 +53,7 @@ export default function Home() {
   }, []);
 
   const media = useMemo<HeroAssets>(() => {
-    if (!rawAssets) return {};
+    if (!rawAssets) return EMPTY_MEDIA;
 
     const woman = extractAsset(rawAssets, "woman");
     const flowerMain = extractAsset(rawAssets, "flowerMain");
