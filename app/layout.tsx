@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./site.css";
 import "./hero-v2.css";
 import "./hero-portrait.css";
+import "./hero-desktop.css";
 
 export const metadata: Metadata = {
   title: "Твоя Ти Тут — простір повернення до себе",
