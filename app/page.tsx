@@ -17,9 +17,6 @@ export default function Home() {
           <img className="hero-img hero-exposure hero-exposure--left" src="/left-exposion.png" alt="" />
           <img className="hero-img hero-exposure hero-exposure--right" src="/rigth-exposion.png" alt="" />
 
-          <img className="hero-img hero-kolos hero-kolos--left" src="/kolos.png" alt="" />
-          <img className="hero-img hero-kolos hero-kolos--right" src="/kolos.png" alt="" />
-
           <div className="hero-wordmark" aria-label="Твоя Ти">
             <div className="hero-wordmark__top">
               <span>ТВ</span>
@@ -47,7 +44,11 @@ export default function Home() {
           </div>
 
           <img className="hero-img hero-course" src="/txt-course.png" alt="Курс" />
-          <img className="hero-img hero-woman" src="/women.png" alt="Жінка у леопардовій сукні" />
+
+          <div className="hero-portrait" aria-label="Жінка з декоративними колосками">
+            <img className="hero-portrait__kolos" src="/kolos.png" alt="" />
+            <img className="hero-portrait__woman" src="/women.png" alt="Жінка у леопардовій сукні" />
+          </div>
 
           <img className="hero-img hero-branch" src="/just-tree.png" alt="" />
           <img className="hero-img hero-secondary-flower" src="/sec-flowers.png" alt="" />
