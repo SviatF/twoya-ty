@@ -64,7 +64,7 @@
 
   .hero-core .hero-wordmark__bottom {
     margin-left: 43.5%;
-    margin-top: -.075em;
+    margin-top: -.12em;
     font-size: clamp(7.35rem, 8.8vw, 11.9rem);
   }
 
@@ -72,7 +72,7 @@
   .hero-core .hero-copy {
     z-index: 16;
     left: 13.5%;
-    top: 45.5%;
+    top: 43.5%;
     width: 292px;
   }
 
@@ -98,31 +98,31 @@
     box-shadow: 0 18px 36px rgba(29, 5, 7, .13);
   }
 
-  /* Script floats in negative space and no longer crowds the portrait. */
+  /* Script floats in the negative space between title and portrait. */
   .hero-core .hero-course {
     z-index: 15;
-    top: 27.4%;
-    right: 34.5%;
-    width: min(17vw, 315px);
-    max-height: 19%;
+    top: 25.4%;
+    right: 38%;
+    width: min(16.2vw, 300px);
+    max-height: 18%;
     transform: rotate(-7deg);
     opacity: .97;
   }
 
-  /* Portrait is the focal point, moved slightly left and made a touch stronger. */
+  /* Portrait keeps its final scale; only a subtle rightward nudge for balance. */
   .hero-woman-core {
     z-index: 13;
-    right: 14%;
+    right: 12.5%;
     bottom: -5.8%;
     height: 82.5%;
     max-width: 53%;
     filter: drop-shadow(0 30px 34px rgba(17, 3, 4, .32));
   }
 
-  /* Dried florals become quiet asymmetric depth, not separate decorative columns. */
+  /* Dried florals remain quiet asymmetric depth layers. */
   .hero-kolos-split {
     z-index: 7;
-    bottom: -7.5%;
+    bottom: -6.5%;
     height: 41%;
     max-width: 15.5%;
     opacity: .78;
@@ -130,6 +130,7 @@
 
   .hero-kolos-split--left {
     left: 15.5%;
+    bottom: -4.5%;
   }
 
   .hero-kolos-split--right {
@@ -151,7 +152,7 @@
   .hero-core .hero-secondary-flower {
     z-index: 18;
     left: -3.5%;
-    bottom: -9%;
+    bottom: -6%;
     width: min(8.5vw, 136px);
     max-height: 15.5%;
   }
@@ -202,11 +203,13 @@
   }
 
   .hero-core .hero-wordmark__bottom {
+    margin-top: -.11em;
     font-size: clamp(6.75rem, 8.9vw, 10.4rem);
   }
 
   .hero-core .hero-copy {
     left: 10.5%;
+    top: 43.8%;
   }
 
   .hero-core .hero-copy strong {
@@ -218,21 +221,27 @@
   }
 
   .hero-core .hero-course {
-    right: 32.5%;
-    width: min(18.5vw, 300px);
+    top: 25.8%;
+    right: 36%;
+    width: min(17.5vw, 285px);
   }
 
   .hero-woman-core {
-    right: 10%;
+    right: 8.5%;
     height: 79%;
     max-width: 52%;
   }
 
   .hero-kolos-split--left {
     left: 12%;
+    bottom: -4%;
   }
 
   .hero-kolos-split--right {
     right: 4.5%;
+  }
+
+  .hero-core .hero-secondary-flower {
+    bottom: -5.5%;
   }
 }
