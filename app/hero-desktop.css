@@ -1,0 +1,200 @@
+/* Desktop-only hero art direction. Mobile is intentionally untouched. */
+
+@media (min-width: 1181px) {
+  .hero-ref__scene {
+    overflow: hidden;
+  }
+
+  /* Botanical walls become framing/background, not foreground clutter. */
+  .hero-ref__scene > .hero-exposure--left,
+  .hero-ref__scene > .hero-exposure--right {
+    z-index: 2;
+    top: -4%;
+    bottom: auto;
+    height: 108%;
+    width: 31vw;
+    max-width: 640px;
+    max-height: none;
+    object-fit: cover;
+    opacity: .97;
+    transform: none;
+  }
+
+  .hero-ref__scene > .hero-exposure--left {
+    left: -10.5vw;
+    object-position: left center;
+    filter: drop-shadow(22px 0 34px rgba(4, 14, 8, .22));
+  }
+
+  .hero-ref__scene > .hero-exposure--right {
+    right: -9.5vw;
+    object-position: right center;
+    filter: drop-shadow(-22px 0 34px rgba(4, 14, 8, .24));
+  }
+
+  /* Central editorial stage. */
+  .hero-core {
+    z-index: 5;
+    width: min(74vw, 1360px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Stronger title hierarchy and more negative space. */
+  .hero-core .hero-wordmark {
+    left: 2.5%;
+    top: 3.2%;
+    width: 80%;
+  }
+
+  .hero-core .hero-wordmark__top {
+    font-size: clamp(8.4rem, 10.8vw, 14.6rem);
+  }
+
+  .hero-core .hero-wordmark__flower-slot {
+    width: .58em;
+    height: .72em;
+  }
+
+  .hero-core .hero-wordmark__flower-slot img {
+    width: 146%;
+    height: 146%;
+    top: 47%;
+  }
+
+  .hero-core .hero-wordmark__bottom {
+    margin-left: 47.5%;
+    margin-top: -.015em;
+    font-size: clamp(7.9rem, 9.55vw, 12.8rem);
+  }
+
+  /* Copy becomes a compact editorial column on the left. */
+  .hero-core .hero-copy {
+    left: 7.5%;
+    top: 45.5%;
+    width: 245px;
+  }
+
+  .hero-core .hero-copy strong {
+    margin-left: 78px;
+    margin-bottom: 1.2rem;
+    font-size: clamp(1.8rem, 1.7vw, 2.25rem);
+  }
+
+  .hero-core .hero-copy p {
+    width: 180px;
+    font-size: 1.18rem;
+    line-height: 1.01;
+  }
+
+  .hero-core .hero-card {
+    width: 188px;
+    min-height: 68px;
+    margin-top: 1.2rem;
+    background: rgba(42, 7, 9, .62);
+    border-color: rgba(231, 202, 143, .28);
+  }
+
+  /* Script sits in the breathing space, avoiding the face. */
+  .hero-core .hero-course {
+    z-index: 16;
+    top: 32.5%;
+    right: 29%;
+    width: min(22vw, 400px);
+    max-height: 24%;
+    transform: rotate(-7deg);
+    opacity: .98;
+  }
+
+  /* Portrait is the dominant focal point. */
+  .hero-woman-core {
+    z-index: 13;
+    right: 6.5%;
+    bottom: -4.8%;
+    height: 73%;
+    max-width: 47%;
+    filter: drop-shadow(0 28px 30px rgba(17, 3, 4, .30));
+  }
+
+  /* Dried florals become depth layers around the portrait instead of symmetry. */
+  .hero-kolos-split {
+    z-index: 7;
+    bottom: -2.5%;
+    height: 49%;
+    max-width: 20%;
+    opacity: .91;
+  }
+
+  .hero-kolos-split--left {
+    left: 11.5%;
+  }
+
+  .hero-kolos-split--right {
+    right: 3.5%;
+    height: 52%;
+    opacity: .86;
+  }
+
+  /* Foreground accents stay subtle. */
+  .hero-core .hero-branch {
+    z-index: 17;
+    right: 10.5%;
+    bottom: -3.2%;
+    width: min(27vw, 470px);
+    max-height: 22%;
+    transform: rotate(-4deg);
+  }
+
+  .hero-core .hero-secondary-flower {
+    z-index: 18;
+    left: 2.5%;
+    bottom: -5.5%;
+    width: min(9.5vw, 155px);
+    max-height: 18%;
+  }
+
+  .hero-core .hero-sparks {
+    right: 21%;
+    top: 28.5%;
+  }
+
+  /* Gentle center illumination ties the layers together. */
+  .hero-ref__scene::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 58% 42%, rgba(255, 224, 196, .06), transparent 26%),
+      linear-gradient(90deg, rgba(53, 8, 10, .08) 0%, transparent 21%, transparent 78%, rgba(53, 8, 10, .08) 100%);
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1500px) {
+  .hero-core {
+    width: 76vw;
+  }
+
+  .hero-ref__scene > .hero-exposure--left,
+  .hero-ref__scene > .hero-exposure--right {
+    width: 33vw;
+  }
+
+  .hero-core .hero-wordmark__top {
+    font-size: clamp(7.8rem, 10.9vw, 12rem);
+  }
+
+  .hero-core .hero-wordmark__bottom {
+    font-size: clamp(7.2rem, 9.8vw, 11rem);
+  }
+
+  .hero-woman-core {
+    height: 71%;
+    right: 4.5%;
+  }
+
+  .hero-core .hero-copy {
+    left: 6%;
+  }
+}
