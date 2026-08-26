@@ -385,3 +385,143 @@
     bottom: -2%;
   }
 }
+
+/* =========================================================
+   DESKTOP ART-DIRECTION PASS
+   Mobile is frozen above and intentionally untouched.
+   ========================================================= */
+@media (min-width: 821px) {
+  .hero-ref__scene > .hero-exposure--left,
+  .hero-ref__scene > .hero-exposure--right {
+    height: 112%;
+    top: -6%;
+    bottom: auto;
+  }
+
+  .hero-ref__scene > .hero-exposure--left {
+    left: -4.5vw;
+    transform: scale(1.08);
+  }
+
+  .hero-ref__scene > .hero-exposure--right {
+    right: -4.5vw;
+    transform: scale(1.08);
+  }
+
+  .hero-core {
+    width: min(68vw, 1180px);
+  }
+
+  .hero-core .hero-wordmark {
+    left: 0;
+    top: 4.8%;
+    width: 84%;
+  }
+
+  .hero-core .hero-wordmark__top {
+    font-size: clamp(7.4rem, 10.6vw, 13.5rem);
+  }
+
+  .hero-core .hero-wordmark__bottom {
+    margin-left: 47%;
+    margin-top: .015em;
+    font-size: clamp(7rem, 9.8vw, 12.4rem);
+  }
+
+  .hero-core .hero-copy {
+    left: 4.5%;
+    top: 46%;
+    width: 225px;
+  }
+
+  .hero-core .hero-copy strong {
+    margin-left: 68px;
+    margin-bottom: 1.15rem;
+    font-size: clamp(1.7rem, 1.7vw, 2.15rem);
+  }
+
+  .hero-core .hero-copy p {
+    width: 172px;
+    font-size: 1.12rem;
+    line-height: 1.03;
+  }
+
+  .hero-core .hero-card {
+    width: 182px;
+    min-height: 66px;
+    margin-top: 1.15rem;
+  }
+
+  .hero-core .hero-course {
+    top: 34.5%;
+    right: 25.5%;
+    width: min(24vw, 390px);
+    max-height: 25%;
+    transform: rotate(-6deg);
+  }
+
+  .hero-woman-core {
+    right: 4.5%;
+    bottom: -5.5%;
+    height: 69%;
+    max-width: 45%;
+  }
+
+  .hero-kolos-split {
+    bottom: -2.5%;
+    height: 56%;
+    max-width: 24%;
+    opacity: .88;
+  }
+
+  .hero-kolos-split--left {
+    left: 4%;
+  }
+
+  .hero-kolos-split--right {
+    right: 2.5%;
+  }
+
+  .hero-core .hero-branch {
+    right: 11%;
+    bottom: -2.8%;
+    width: min(27vw, 420px);
+    max-height: 23%;
+    transform: rotate(-4deg);
+  }
+
+  .hero-core .hero-secondary-flower {
+    left: 2.5%;
+    bottom: -5.5%;
+    width: min(10vw, 150px);
+    max-height: 18%;
+  }
+
+  .hero-core .hero-sparks {
+    right: 20%;
+    top: 29.5%;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1180px) {
+  .hero-core {
+    width: 74vw;
+  }
+
+  .hero-core .hero-wordmark__top {
+    font-size: clamp(6.7rem, 11.2vw, 10.6rem);
+  }
+
+  .hero-core .hero-wordmark__bottom {
+    font-size: clamp(6.4rem, 10.3vw, 9.8rem);
+  }
+
+  .hero-woman-core {
+    right: 2%;
+    height: 67%;
+  }
+
+  .hero-kolos-split {
+    max-width: 26%;
+  }
+}
