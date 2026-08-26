@@ -17,44 +17,45 @@ export default function Home() {
           <img className="hero-img hero-exposure hero-exposure--left" src="/left-exposion.png" alt="" />
           <img className="hero-img hero-exposure hero-exposure--right" src="/rigth-exposion.png" alt="" />
 
-          <div className="hero-wordmark" aria-label="Твоя Ти">
-            <div className="hero-wordmark__top">
-              <span>ТВ</span>
-              <span className="hero-wordmark__flower-slot">
-                <img src="/main-flower.png" alt="" />
-              </span>
-              <span>Я</span>
+          <div className="hero-core">
+            <div className="hero-wordmark" aria-label="Твоя Ти">
+              <div className="hero-wordmark__top">
+                <span>ТВ</span>
+                <span className="hero-wordmark__flower-slot">
+                  <img src="/main-flower.png" alt="" />
+                </span>
+                <span>Я</span>
+              </div>
+              <div className="hero-wordmark__bottom">ТИ</div>
             </div>
-            <div className="hero-wordmark__bottom">ТИ</div>
-          </div>
 
-          <div className="hero-copy">
-            <strong>ЦЕ НЕ -</strong>
-            <p>
-              А ЩО<br />
-              ЗАЛИШИТЬСЯ,<br />
-              ЯКЩО<br />
-              ПРИБРАТИ ВСІ<br />
-              ТВОЇ «ТРЕБА»?
-            </p>
-            <a className="hero-card" href="#manifesto">
-              <span>Можливо ти</span>
-              <b>УВІЙТИ →</b>
-            </a>
-          </div>
+            <div className="hero-copy">
+              <strong>ЦЕ НЕ -</strong>
+              <p>
+                А ЩО<br />
+                ЗАЛИШИТЬСЯ,<br />
+                ЯКЩО<br />
+                ПРИБРАТИ ВСІ<br />
+                ТВОЇ «ТРЕБА»?
+              </p>
+              <a className="hero-card" href="#manifesto">
+                <span>Можливо ти</span>
+                <b>УВІЙТИ →</b>
+              </a>
+            </div>
 
-          <img className="hero-img hero-course" src="/txt-course.png" alt="Курс" />
+            <img className="hero-img hero-course" src="/txt-course.png" alt="Курс" />
 
-          <div className="hero-portrait" aria-label="Жінка з декоративними колосками">
-            <img className="hero-portrait__kolos" src="/kolos.png" alt="" />
-            <img className="hero-portrait__woman" src="/women.png" alt="Жінка у леопардовій сукні" />
-          </div>
+            <img className="hero-img hero-kolos-split hero-kolos-split--left" src="/kolos-left.png" alt="" />
+            <img className="hero-img hero-kolos-split hero-kolos-split--right" src="/kolos-right.png" alt="" />
+            <img className="hero-img hero-woman-core" src="/women.png" alt="Жінка у леопардовій сукні" />
 
-          <img className="hero-img hero-branch" src="/just-tree.png" alt="" />
-          <img className="hero-img hero-secondary-flower" src="/sec-flowers.png" alt="" />
+            <img className="hero-img hero-branch" src="/just-tree.png" alt="" />
+            <img className="hero-img hero-secondary-flower" src="/sec-flowers.png" alt="" />
 
-          <div className="hero-sparks" aria-hidden="true">
-            <span>✦</span><span>✦</span>
+            <div className="hero-sparks" aria-hidden="true">
+              <span>✦</span><span>✦</span>
+            </div>
           </div>
 
           <div className="hero-meta" aria-hidden="true">
